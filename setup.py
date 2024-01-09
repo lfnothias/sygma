@@ -9,15 +9,6 @@ try:
 except IOError:
     README = ''
 
-# Test if rdkit is present with INCHI support
-try:
-    from rdkit.Chem.inchi import INCHI_AVAILABLE
-
-    if not INCHI_AVAILABLE:
-        raise Exception('RDKit with INCHI support is required')
-except ImportError:
-    raise Exception('RDKit with INCHI support is required')
-
 ext_modules = []
 
 from sygma import __version__
